@@ -1,27 +1,32 @@
 
+"use client"
 import "./globals.css";
 import Sidebar from "@/components/sidebar/sidebar";
-export const metadata = {
+import { useEffect, useState } from 'react';
+
+const metadata = {
   title: "Recipe",
   description: "Powered by Kyle",
 };
 
 export default function RootLayout({ children }) {
+  const [headerText, setHeaderText] = useState("Recipe List");
+  
   return (
     <html lang="en">
       <body className="flex h-full">
-        <div class="flex flex-grow h-screen">
-          <aside class="w-1/6 bg-gray-900 flex-shrink-0 p-5 text-white">
-            <Sidebar/>
+        <div className="flex flex-grow h-screen">
+          <aside className="w-1/6 bg-gray-900 flex-shrink-0 p-5 text-white">
+            <Sidebar setHeaderText={setHeaderText}/>
           </aside>
-        <div class="flex flex-col w-full px-5 flex-grow">
-          <header class="flex items-center h-28 border-2 border-blue-500">
-            <h1>
-              Recipe Lists
+        <div className="flex flex-col w-full px-5 flex-grow">
+          <header className="flex items-center h-28">
+            <h1 className="text-7xl">
+              {headerText}
             </h1>
           </header>
-          <main class="border-2 border-gray-500 flex-grow">
-            {children}
+          <main className="flex-grow">
+            {children }
           </main>
         </div>
         </div>

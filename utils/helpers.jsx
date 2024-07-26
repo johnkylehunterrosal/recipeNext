@@ -1,20 +1,28 @@
+
+import { FaListUl } from "react-icons/fa";
+import { MdEdit, MdFavorite } from "react-icons/md";
+import { IoMdAddCircle } from "react-icons/io";
 export const recipeNav = [
     {
         title : "MENU",
-        compoent : FaListUl
+        component : FaListUl,
+        url : "/",
     },
     {
         title : "EDIT",
-        component : IoMdAddCircle,
+        component : MdEdit,
+        url : "/edit-recipe",
         
     },
     {
-        title : "Saved",
-        component : MdEdit,
+        title : "ADD RECIPE",
+        component : IoMdAddCircle,
+        url : "/add-recipe",
     },
     {
-        title : "Add Recipe",
-        component : BsSave2Fill,
+        title : "FAVOURITES",
+        component : MdFavorite,
+        url : "/my-favourites",
         
     },
 ]
