@@ -1,9 +1,9 @@
-import React from 'react'
+import AddForm from '@/components/forms/AddForm'
 
 const AddRecipe = () => {
   return (
     <>
-        Add
+        <AddForm />
     </>
   )
 }

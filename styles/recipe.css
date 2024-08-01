@@ -1,0 +1,96 @@
+.recipe__card {
+    border-radius: 10px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+}
+.recipe__input {
+    width: 100%;
+    min-height: 40px;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    outline: none;
+    background: #e8e8e8;
+    box-shadow: 5px 5px 17px #c8c8c8,
+               -5px -5px 17px #ffffff;
+    border: none;
+    border-radius: 10px;
+    transition: all .5s;
+}
+  
+.recipe__input:focus {
+    background: #e8e8e8;
+    box-shadow: inset 5px 5px 17px #c8c8c8,
+              inset -5px -5px 17px #ffffff;
+}
+button {
+  border: none;
+}
+
+.recipe__add_button {
+  background: linear-gradient(140deg, rgba(75, 118, 200, 1) 0%, rgba(31, 70, 145, 1) 100%);
+  border-radius: 45px;
+  text-align: left;
+  padding: 6px 0px 6px 0px;
+  border: 4px solid #e8e8e8 !important;
+  border-style: outset;
+  box-shadow: -6px -5px 18px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.recipe__add_button .recipe__add_main {
+  border-radius: 45px;
+  color: rgba(255, 255, 255, 1);
+  padding: 11px 25px 11px 2px;
+  box-shadow: inset 0px 0px 5px rgba(17, 17, 17, 0);
+  transition: all 0.5s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.recipe__add_ico .recipe__add_blur {
+  background: linear-gradient(318deg, rgba(75, 118, 200, 1) 0%, rgba(31, 70, 145, 1) 100%);
+  border-radius: 100%;
+  margin-left: 0;
+  padding: 2px 23px;
+  filter: blur(1px);
+  text-align: center;
+}
+
+.recipe__add_ico {
+  position: relative;
+  margin-right: 20px;
+}
+
+.recipe__add_ico .recipe__add_text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Hovering */
+.recipe__add_button .recipe__add_main:hover {
+  box-shadow: inset 0px 0px 5px #e8e8e8;
+  border: 1px solid #e8e8e8;
+  color: rgba(255, 255, 255, 0.5);
+}
+.recipe__add_card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+}
+.recipe__add_delete {
+  position: absolute;
+  bottom: 18px;
+  right: -13px;
+}
+
+
+  
+  

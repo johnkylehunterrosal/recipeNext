@@ -1,8 +1,10 @@
 
+import RecipeCard from "@/components/cards/RecipeCard"
 const Main = () => {
+
   return (
     <>
-      Main
+      <RecipeCard/>
     </>
   )
 }

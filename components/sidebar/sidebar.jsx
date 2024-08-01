@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { recipeNav } from "@/utils/helpers";
 import { MdRestaurantMenu } from "react-icons/md";
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation';
 
 const Sidebar = ({setHeaderText}) => {
     const [recipeMenu, setRecipeMenu] = useState(recipeNav);
