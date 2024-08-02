@@ -11,7 +11,7 @@ const Sidebar = ({setHeaderText}) => {
     useEffect(() => {
         switch (pathname) {
           case '/':
-            setHeaderText('Recipe List');
+            setHeaderText('Recipe App');
             break;
           case '/edit-recipe':
             setHeaderText('Edit Recipe');

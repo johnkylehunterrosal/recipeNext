@@ -1,5 +1,5 @@
 
-const Delete_card_btn = ({onClick, e}) => {
+const DeleteCardBtn = ({onClick}) => {
   return (
     <>
         <button
@@ -29,4 +29,4 @@ const Delete_card_btn = ({onClick, e}) => {
   )
 }
 
-export default Delete_card_btn
+export default DeleteCardBtn

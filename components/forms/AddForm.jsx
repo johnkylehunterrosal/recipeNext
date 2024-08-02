@@ -1,13 +1,17 @@
 "use client"
-import { useState } from "react"
-import Delete_card_btn from "../button/Delete_card_btn"
-import Add_card_btn from "../button/Add_card_btn"
+import { useState, useContext } from "react"
+import DeleteCardBtn from "../button/DeleteCardBtn"
+import AddCardBtn from "../button/AddcardBtn"
+import SubmitFormBtn from "../button/SubmitFormBtn"
+import { ThemeContext } from "../../utils/ThemeContext"
 
 const AddForm = () => {
+  const { setAllRecipe } = useContext(ThemeContext);
   const [recipe, setRecipe] = useState({
+    id : 0,
     recipeName: "",
     imageUrl: "",
-    description: "",
+    shortDescription: "",
     ingredients: [],
     instructions: []
   })
@@ -19,7 +23,6 @@ const AddForm = () => {
     id: 0,
     name: ""
   })
-
   const handleChange = (setter) => (e) => {
     setter(prevState => ({ ...prevState, [e.target.name]: e.target.value }))
   }
@@ -66,6 +69,28 @@ const AddForm = () => {
     }))
   }
 
+  const submitFormClick = (e) => {
+    e.preventDefault();
+    const submitButton = document.querySelector('.recipe__submit_btn');
+  
+    if (
+      recipe.recipeName.trim() === "" ||
+      recipe.imageUrl.trim() === "" ||
+      recipe.shortDescription.trim() === "" ||
+      recipe.ingredients.length === 0 ||
+      recipe.instructions.length === 0
+    ) {
+      alert("Please fill in all fields before submitting.");
+      submitButton.classList.remove('valid');
+      return;
+    }
+  
+    const newRecipe = { ...recipe, id: Date.now() };
+    setAllRecipe(prevState => [...prevState, newRecipe]);
+    submitButton.classList.add('valid');
+  };
+  console.log(recipe.shortDescription)
+
   return (
     <>
       <form className="lg:mx-56 w-full">
@@ -89,9 +114,9 @@ const AddForm = () => {
           onChange={handleChange(setRecipe)}
           placeholder="Short Description:"
           className="recipe__input mt-5"
-          name="description"
+          name="shortDescription"
           type="text"
-          value={recipe.description}
+          value={recipe.shortDescription}
         />
         <div className="mt-5">
           <div className="flex">
@@ -103,13 +128,13 @@ const AddForm = () => {
               name="name"
               type="text"
             />
-            <Add_card_btn onClick={addIngredient} />
+            <AddCardBtn onClick={addIngredient} />
           </div>
           <div className="flex flex-col">
             {recipe.ingredients.map((ingredient, index) => (
               <div key={ingredient.id} className="recipe__add_card mt-5 gap-5 px-5">
                 <div className="recipe__add_delete">
-                  <Delete_card_btn onClick={() => removeIngredient(index)} />
+                  <DeleteCardBtn onClick={() => removeIngredient(index)} />
                 </div>
                 {ingredient.name}
               </div>
@@ -126,18 +151,21 @@ const AddForm = () => {
               name="name"
               type="text"
             />
-            <Add_card_btn onClick={addInstruction} />
+            <AddCardBtn onClick={addInstruction} />
           </div>
           <div className="flex flex-col">
             {recipe.instructions.map((instruction, index) => (
               <div key={instruction.id} className="recipe__add_card mt-5 gap-5 px-5">
                 <div className="recipe__add_delete">
-                  <Delete_card_btn onClick={() => removeInstruction(index)} />
+                  <DeleteCardBtn onClick={() => removeInstruction(index)} />
                 </div>
                 <p>{instruction.name}</p>
               </div>
             ))}
           </div>
+        </div>
+        <div className="flex justify-center mt-5">
+          <SubmitFormBtn onClick={submitFormClick}/>
         </div>
       </form>
     </>

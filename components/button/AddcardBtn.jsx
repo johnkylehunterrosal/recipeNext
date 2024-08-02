@@ -1,5 +1,5 @@
 
-const Add_card_btn = ({onClick, e}) => {
+const AddCardBtn = ({onClick}) => {
   return (
     <>
         <button className="recipe__add_button" onClick={onClick}>
@@ -14,4 +14,4 @@ const Add_card_btn = ({onClick, e}) => {
     </>
   )
 }
-export default Add_card_btn
+export default AddCardBtn

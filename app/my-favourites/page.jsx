@@ -1,9 +1,11 @@
+import FavouritesCard from '@/components/cards/FavouritesCard'
 import React from 'react'
 
 const MyFavourites = () => {
   return (
     <>
-        My Favourites
+        <FavouritesCard/>
+
     </>
   )
 }
