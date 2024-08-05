@@ -9,7 +9,7 @@ const RecipeCard = () => {
 
     const addToFavouritesClick = (id) => {
        const addFavourite = allRecipe.find(recipe => recipe.id === id);
-      setFavourites(prevState => {
+        setFavourites(prevState => {
         return [...prevState, addFavourite]
       })
     }
